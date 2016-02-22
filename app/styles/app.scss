@@ -10,6 +10,45 @@ body {
   background: black;
 }
 
+.lifecycle-outer {
+  font-family: monospace;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.lifecycle-outer > .lifecycle-outer {
+  width: 90%;
+  margin-top: -1px;
+}
+
+.lifecycle-inner {
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 2px 5px 1px;
+  border-radius: 2px;
+}
+
+.lifecycle-outer .lifecycle-inner {
+  background: #F58C76;
+}
+
+.lifecycle-outer .lifecycle-outer .lifecycle-inner {
+  background: #a2d39c;
+}
+
+.lifecycle-outer .lifecycle-outer .lifecycle-outer .lifecycle-inner {
+  background: #00aeef;
+}
+
+.lifecycle-outer .lifecycle-outer .lifecycle-outer .lifecycle-outer .lifecycle-inner {
+  background: #B3AFDC;
+}
+
+.max-width {
+  width: 700px;
+}
+
 .slide-container {
   background: white;
   position: absolute;
@@ -20,6 +59,7 @@ body {
 .padded {
   position: relative;
   padding: 3rem;
+  box-sizing: border-box;
 }
 
 .centered {

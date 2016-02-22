@@ -6,7 +6,7 @@ const { computed } = Ember;
 const LEFT = 37;
 const RIGHT = 39;
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(Ember.Evented, {
   queryParams: ['slide'],
   slide: 'home',
 
@@ -14,7 +14,11 @@ export default Ember.Controller.extend({
     "home",
     "dali",
     "dali-tomster",
-    "overview",
+    "ec-intro-1",
+    "ec-intro-2",
+    "structured-programming-1",
+    "structured-programming-2",
+    //"overview",
   ],
 
   indexedSlides: computed('slides', function() {
@@ -54,18 +58,36 @@ export default Ember.Controller.extend({
     }
   },
 
+  index: 0,
   keyboardListener: task(function * () {
     yield subscribe(events(Ember.$(document.body), 'keydown'), function * (ev) {
       let { keyCode } = ev;
       let destination;
       if (keyCode === LEFT) {
         destination = this.get('currentSlide.prev');
+        if (destination) {
+          this.set('slide', destination);
+        }
       } else if (keyCode === RIGHT) {
         destination = this.get('currentSlide.next');
-      }
-
-      if (destination) {
-        this.set('slide', destination);
+        let prevented = false;
+        let proceedEvent = {
+          preventDefault() {
+            let oldPrevented = prevented;
+            prevented = true;
+            return !oldPrevented;
+          },
+          index: this.index,
+        };
+        this.trigger('nextSlide', proceedEvent);
+        Ember.run.next(() => {
+          if (!prevented && destination) {
+            this.set('index', 0);
+            this.set('slide', destination);
+          } else {
+            this.incrementProperty('index');
+          }
+        });
       }
     });
   }).on('init')

@@ -6,7 +6,9 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     babel: {
       includePolyfill: true,
-    }
+    },
+    snippetPaths: ['snippets'],
+    snippetSearchPaths: ['app'],
   });
 
   // Use `app.import` to add additional libraries to the generated
