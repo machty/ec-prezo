@@ -1,0 +1,111 @@
+@import "./normalize";
+@import "./skeleton";
+@import "bower_components/font-awesome/scss/font-awesome";
+
+$ember-power-select-border-color: #64A5ED;
+$ember-power-select-border-radius: 0;
+@import 'ember-power-select';
+
+.slide-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+}
+
+.centered {
+  text-align: center;
+}
+
+section {
+  margin-top: 10rem;
+}
+
+.navbar {
+  a {
+    text-decoration: none;
+    color: black;
+    line-height: 6rem;
+    padding: 2rem 2rem;
+  }
+}
+
+.nav-bar-link-outer {
+  text-align: center;
+}
+
+.docs {
+  margin-top: 2rem;
+}
+
+.side-menu {
+  padding-left: 2rem;
+}
+
+.progress-outer {
+  position: relative;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.progress-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  transition: width 0.5s;
+  -webkit-transition: width 1s;
+  white-space: nowrap;
+  line-height: 100%;
+  border-radius: 3px;
+  line-height: 40px;
+}
+
+
+.btn-cancel {
+  color: red;
+  font-size: 20px;
+}
+
+.btn {
+  line-height: 2;
+  padding: 1rem;
+  background-color: #ddddff;
+  width: 300px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.btn.disabled {
+  background-color: #ddd;
+  color: #888;
+}
+
+.btn.running {
+  background-color: red;
+  color: white;
+}
+
+.value {
+  font-size: 24px;
+  color: red;
+}
+
+button, .button {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+

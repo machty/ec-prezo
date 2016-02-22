@@ -1,0 +1,16 @@
+{{#slide-container}}
+  {{#liquid-bind currentSlide as |slide|}}
+    <div class="slide">
+      {{#if slide.prev}}
+        {{link-to slide.prev (query-params slide=slide.prev)}}
+      {{/if}}
+
+      {{component slide.componentName}}
+
+      {{#if slide.next}}
+        {{link-to slide.next (query-params slide=slide.next)}}
+      {{/if}}
+    </div>
+  {{/liquid-bind}}
+{{/slide-container}}
+
