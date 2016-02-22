@@ -20,6 +20,12 @@ export default Ember.Controller.extend(Ember.Evented, {
     "structured-programming-2",
     "js-structured-programming-1",
     "js-structured-programming-2",
+    "js-structured-programming-3",
+    "js-structured-programming-4",
+    "js-structured-programming-5",
+    "js-structured-programming-6",
+    "preventing-concurrency-1",
+    "preventing-concurrency-2",
   ],
 
   indexedSlides: computed('slides', function() {
