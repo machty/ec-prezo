@@ -18,7 +18,8 @@ export default Ember.Controller.extend(Ember.Evented, {
     "ec-intro-2",
     "structured-programming-1",
     "structured-programming-2",
-    //"overview",
+    "js-structured-programming-1",
+    "js-structured-programming-2",
   ],
 
   indexedSlides: computed('slides', function() {
