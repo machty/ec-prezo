@@ -8,14 +8,14 @@ export default Ember.Component.extend({
   classNames: 'slide-container',
 
   viewportListener: task(function * () {
-    this.updateWindowSize();
+    this.updateContainerSize();
     yield subscribe(events(Ember.$(window), 'resize'), function * () {
       yield timeout(200);
-      this.updateWindowSize();
+      this.updateContainerSize();
     }).restartable();
   }).on('didInsertElement'),
 
-  updateWindowSize() {
+  updateContainerSize() {
     let height = window.innerHeight;
     let width  = window.innerWidth;
     let baseRatio = BASE_WIDTH / BASE_HEIGHT;

@@ -6,16 +6,59 @@ $ember-power-select-border-color: #64A5ED;
 $ember-power-select-border-radius: 0;
 @import 'ember-power-select';
 
+body {
+  background: black;
+}
+
 .slide-container {
+  background: white;
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.padded {
+  position: relative;
+  padding: 3rem;
+}
+
+.centered {
+  text-align: center;
+}
+
+.slide-bind,
+.slide-bind > .liquid-child {
+  width: 100%;
+  height: 100%;
+}
+
+.flex-center {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
+
+  position: relative;
+}
+
+.inverse {
+  color: white;
 }
 
 .slide {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-image {
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .centered {
@@ -24,6 +67,10 @@ $ember-power-select-border-radius: 0;
 
 section {
   margin-top: 10rem;
+}
+
+img {
+  max-width: 100%;
 }
 
 .navbar {

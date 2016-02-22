@@ -1,7 +1,10 @@
 import Ember from 'ember';
 import SlideComponent from 'ec-prezo/components/slide';
+import { task, subscribe, events } from 'ember-concurrency';
 
 const { computed } = Ember;
+const LEFT = 37;
+const RIGHT = 39;
 
 export default Ember.Controller.extend({
   queryParams: ['slide'],
@@ -9,8 +12,9 @@ export default Ember.Controller.extend({
 
   slides: [
     "home",
-    "intro",
-    "hello",
+    "dali",
+    "dali-tomster",
+    "overview",
   ],
 
   indexedSlides: computed('slides', function() {
@@ -26,7 +30,8 @@ export default Ember.Controller.extend({
         componentName,
         name,
         prev,
-        next
+        next,
+        index: i,
       });
     }
     return indexedSlides;
@@ -48,5 +53,21 @@ export default Ember.Controller.extend({
       container.register(componentClassName, SlideComponent);
     }
   },
+
+  keyboardListener: task(function * () {
+    yield subscribe(events(Ember.$(document.body), 'keydown'), function * (ev) {
+      let { keyCode } = ev;
+      let destination;
+      if (keyCode === LEFT) {
+        destination = this.get('currentSlide.prev');
+      } else if (keyCode === RIGHT) {
+        destination = this.get('currentSlide.next');
+      }
+
+      if (destination) {
+        this.set('slide', destination);
+      }
+    });
+  }).on('init')
 });
 
