@@ -1,0 +1,31 @@
+.tomster-head {
+  position: absolute;
+}
+
+.hole-back,
+.hole-front {
+  width: 345px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hole-back {
+  background-image: url(images/holeback.png);
+}
+
+.hole-front {
+  background-image: url(images/holefront.png);
+}
+
+.tomster-head {
+  position: absolute;
+  top: 0;
+  left: 77px;
+  width: 190px;
+  height: 207px;
+  transition: top 300ms;
+  -webkit-transition: top 300ms;
+}
+

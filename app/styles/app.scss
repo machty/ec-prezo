@@ -1,5 +1,6 @@
 @import "./normalize";
 @import "./skeleton";
+@import "./whackamole";
 @import "bower_components/font-awesome/scss/font-awesome";
 
 $ember-power-select-border-color: #64A5ED;
@@ -92,6 +93,7 @@ body {
   overflow: hidden;
 }
 
+.whackamole-bg,
 .bg-image {
   background-size: cover;
   position: absolute;
@@ -99,6 +101,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.whackamole-bg {
+  background-color: #00a651;
+  z-index: -1;
 }
 
 .centered {

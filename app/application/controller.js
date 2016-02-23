@@ -26,6 +26,7 @@ export default Ember.Controller.extend(Ember.Evented, {
     "js-structured-programming-6",
     "preventing-concurrency-1",
     "preventing-concurrency-2",
+    "whackamole",
   ],
 
   indexedSlides: computed('slides', function() {
