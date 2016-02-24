@@ -170,6 +170,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
+  vertical-align: middle;
   display: inline-block;
   height: 38px;
   padding: 0 30px;

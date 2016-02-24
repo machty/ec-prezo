@@ -27,6 +27,14 @@ export default Ember.Controller.extend(Ember.Evented, {
     "preventing-concurrency-1",
     "preventing-concurrency-2",
     "whackamole",
+    "structured-concurrency-1",
+    "structured-concurrency-2",
+    "enter-ember-concurrency-1",
+    "enter-ember-concurrency-2",
+    "enter-ember-concurrency-3",
+    "enter-ember-concurrency-4",
+    "enter-ember-concurrency-5",
+    "go-alone",
   ],
 
   indexedSlides: computed('slides', function() {
@@ -74,6 +82,7 @@ export default Ember.Controller.extend(Ember.Evented, {
       if (keyCode === LEFT) {
         destination = this.get('currentSlide.prev');
         if (destination) {
+          this.set('index', 0);
           this.set('slide', destination);
         }
       } else if (keyCode === RIGHT) {

@@ -19,7 +19,6 @@ export default Ember.Component.extend({
   tagName: '',
   text: null,
   scrambledText: null,
-// BEGIN-SNIPPET scrambled-text
   startScrambling: task(function * () {
     let text = this.get('text');
     while (true) {
@@ -30,10 +29,14 @@ export default Ember.Component.extend({
         pauseTime = pauseTime * 0.95;
       }
       this.set('scrambledText', text);
+      if (!this.get('loop')) {
+        return;
+      }
       yield timeout(4000);
     }
   }).on('init'),
-// END-SNIPPET
+
+  loop: true,
 });
 
 

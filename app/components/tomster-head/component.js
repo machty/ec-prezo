@@ -28,6 +28,8 @@ export default Ember.Component.extend({
     });
   },
 
+  // BEGIN-SNIPPET tomster-loop
+  // from the tomster-head component
   tomsterLoop: task(function * () {
     while (true) {
       this.set('tomsterIndex', Math.floor(Math.random() * NUM_TOMSTERS));
@@ -38,5 +40,10 @@ export default Ember.Component.extend({
       yield randomTimeout();
     }
   }).on('init'),
+  // END-SNIPPET
+
+  click() {
+    this.sendAction('clicked');
+  },
 });
 
