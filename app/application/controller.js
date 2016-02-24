@@ -50,6 +50,7 @@ export default Ember.Controller.extend(Ember.Evented, {
     "task-modifiers-6",
     "task-modifiers-7",
     "things-that-rock-1",
+    "autocomplete-example",
     "go-alone",
   ],
 
