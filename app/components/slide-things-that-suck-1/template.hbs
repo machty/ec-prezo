@@ -10,9 +10,6 @@
         {{#with "2. Callback heck (no <code>promise.then()</code>" as |header1|}}
           {{#hidden-at-first index=1}}
             <h4><strike>{{{header1}}}</strike></h4>
-            <h5>
-              (the same goes with Observables!)
-            </h5>
 
             {{#with "3. Rolling your own cancelation scheme" as |header2|}}
               {{#hidden-at-first index=2}}
@@ -21,6 +18,15 @@
                 {{#with "4. Manually (un)setting some variant of <code>isRunning</code>" as |header3|}}
                   {{#hidden-at-first index=3}}
                     <h4><strike>{{{header3}}}</strike></h4>
+
+                    {{#with "5. Checking .isDestroyed" as |header4|}}
+                      {{#hidden-at-first index=4}}
+                        <h4><strike>{{{header4}}}</strike></h4>
+                      {{else}}
+                        <h4>{{{header4}}}</h4>
+                      {{/hidden-at-first}}
+                    {{/with}}
+
                   {{else}}
                     <h4>{{{header3}}}</h4>
                   {{/hidden-at-first}}
