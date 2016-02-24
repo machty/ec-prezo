@@ -14,6 +14,9 @@
           class={{if myTask.isRunning 'clickable'}}>
     Cancel
   </button>
+  {{#if myTask.isRunning}}
+    <p>Please wait {{fa-icon "spinner" spin=myTask.isRunning}}</p>
+  {{/if}}
   {{! END-SNIPPET }}
 </div>
 
