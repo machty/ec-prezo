@@ -83,6 +83,11 @@ export default Ember.Controller.extend(Ember.Evented, {
     return indexedSlides.findBy('name', name) || indexedSlides[0];
   }),
 
+  progress: computed('currentSlide', function() {
+    let slide = this.get('currentSlide');
+    return slide.index / (this.slides.length - 1);
+  }),
+
   registerAndValidateSlide(componentName) {
     let container = Ember.getOwner(this);
     let componentClassName = `component:${componentName}`;

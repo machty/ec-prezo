@@ -30,6 +30,10 @@ body {
   font-size: 16px;
 }
 
+.hljs {
+  background-color: rgba(0,0,0,0.05);
+}
+
 .lifecycle-outer > .lifecycle-outer {
   width: 90%;
   margin-top: -1px;

@@ -5,6 +5,9 @@ const BASE_WIDTH  = 900;
 const BASE_HEIGHT = 500;
 
 export default Ember.Component.extend({
+  currentSlide: null,
+  progress: null,
+
   classNames: 'slide-container',
 
   viewportListener: task(function * () {
@@ -15,7 +18,7 @@ export default Ember.Component.extend({
     }).restartable();
   }).on('didInsertElement'),
 
-  updateContainerSize() {
+  updateContainerSize: Ember.observer('progress', function() {
     let height = window.innerHeight;
     let width  = window.innerWidth;
     let baseRatio = BASE_WIDTH / BASE_HEIGHT;
@@ -25,11 +28,14 @@ export default Ember.Component.extend({
       width / BASE_WIDTH :
       height / BASE_HEIGHT;
 
+    let color = `hsl(${this.get('progress')*180}, 100%, 95%)`;
+
     this.$().css({
+      backgroundColor: color,
       height: BASE_HEIGHT,
       width: BASE_WIDTH,
       transform: ` translateX(-50%) translateY(-50%) scale(${trans})`,
     });
-  }
+  }),
 });
 
