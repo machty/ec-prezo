@@ -17,6 +17,14 @@
             {{#with "3. Rolling your own cancelation scheme" as |header2|}}
               {{#hidden-at-first index=2}}
                 <h4><strike>{{header2}}</strike></h4>
+
+                {{#with "4. Manually (un)setting some variant of <code>isRunning</code>" as |header3|}}
+                  {{#hidden-at-first index=3}}
+                    <h4><strike>{{{header3}}}</strike></h4>
+                  {{else}}
+                    <h4>{{{header3}}}</h4>
+                  {{/hidden-at-first}}
+                {{/with}}
               {{else}}
                 <h4>{{header2}}</h4>
               {{/hidden-at-first}}

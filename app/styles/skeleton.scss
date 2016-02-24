@@ -202,7 +202,9 @@ input[type="button"]:focus {
   border-color: #888;
   outline: 0; }
 .button.button-primary,
+.button.clickable,
 button.button-primary,
+button.clickable,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
