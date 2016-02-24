@@ -41,6 +41,7 @@ export default Ember.Controller.extend(Ember.Evented, {
     "what-about-concurrency-3",
     "what-about-concurrency-4",
     "what-about-concurrency-5",
+    "what-about-concurrency-6",
     "go-alone",
   ],
 

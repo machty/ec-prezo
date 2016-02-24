@@ -1,0 +1,26 @@
+<div class="flex-center padded" style="width: 100%">
+  {{#liquid-spacer growDuration=250 class="max-width"}}
+    <h3>
+      Problems with these approaches:
+    </h3>
+
+    {{#hidden-at-first index=0}}
+      <h5>They're boilerplate</h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=1}}
+      <h5>They require promise acrobatics (and restarting isn't even possible)</h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=2}}
+      <h5>Switching between approaches requires rewriting the function</h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=3}}
+      <h5>...yet they're extremely commonplace in just about every app ever</h5>
+    {{/hidden-at-first}}
+
+  {{/liquid-spacer}}
+</div>
+
+
