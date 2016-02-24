@@ -52,6 +52,7 @@ export default Ember.Controller.extend(Ember.Evented, {
     "things-that-rock-1",
     "autocomplete-example",
     "accelerator-example",
+    "many-examples",
     "summary",
     "go-alone",
     "thank-you",
