@@ -3,7 +3,7 @@ export default Component.extend({
     this.set('status', 'Saving...');
     this.get('model').save().then(() => {
       // unsafe! might throw exception:
-      // "calling est on destroyed object"
+      // "calling set on destroyed object"
       this.set('status', 'Saved!');
     });
   }

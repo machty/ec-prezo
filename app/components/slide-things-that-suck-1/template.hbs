@@ -1,0 +1,34 @@
+<div class="flex-center padded" style="width: 100%">
+  {{#liquid-spacer growDuration=250 class="max-width"}}
+    <h1>
+      List of Things that Suck:
+    </h1>
+
+    {{#with "1. Cleaning up after yourself via lifecycle hooks" as |header0|}}
+      {{#hidden-at-first index=0}}
+        <h4><strike>{{header0}}</strike></h4>
+        {{#with "2. Callback heck (no <code>promise.then()</code>" as |header1|}}
+          {{#hidden-at-first index=1}}
+            <h4><strike>{{{header1}}}</strike></h4>
+            <h5>
+              (the same goes with Observables!)
+            </h5>
+
+            {{#with "3. Rolling your own cancelation scheme" as |header2|}}
+              {{#hidden-at-first index=2}}
+                <h4><strike>{{header2}}</strike></h4>
+              {{else}}
+                <h4>{{header2}}</h4>
+              {{/hidden-at-first}}
+            {{/with}}
+          {{else}}
+            <h4>{{{header1}}}</h4>
+          {{/hidden-at-first}}
+        {{/with}}
+      {{else}}
+        <h4>{{header0}}</h4>
+      {{/hidden-at-first}}
+    {{/with}}
+  {{/liquid-spacer}}
+</div>
+
