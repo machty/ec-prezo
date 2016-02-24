@@ -52,7 +52,9 @@ export default Ember.Controller.extend(Ember.Evented, {
     "things-that-rock-1",
     "autocomplete-example",
     "accelerator-example",
+    "summary",
     "go-alone",
+    "thank-you",
   ],
 
   indexedSlides: computed('slides', function() {
