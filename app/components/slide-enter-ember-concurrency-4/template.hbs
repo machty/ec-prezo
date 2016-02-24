@@ -1,0 +1,25 @@
+<div class="padded">
+  <h2>
+    {{header}}
+  </h2>
+
+  <div class="row">
+    <div class="six columns">
+      {{code-snippet name="task-4-component.js"}}
+    </div>
+    <div class="six columns">
+      {{code-snippet name="task-4-template.hbs"}}
+
+      {{! BEGIN-SNIPPET task-4-template}}
+      {{! no change from before }}
+      <button onclick={{perform myTask}}>
+        Perform the Task
+      </button>
+      <button onclick={{cancel-all myTask}}>
+        Cancel
+      </button>
+      {{! END-SNIPPET }}
+    </div>
+  </div>
+</div>
+

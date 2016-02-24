@@ -1,0 +1,33 @@
+<div class="flex-center padded" style="width: 100%">
+  {{#liquid-spacer growDuration=250 class="max-width"}}
+    <h2>
+      All of these slides are Components
+    </h2>
+
+    {{#hidden-at-first index=0}}
+      <h5>
+        None of them implement <code>willDestroyElement</code>
+      </h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=1}}
+      <h5>
+        They use tasks.
+      </h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=2}}
+      <h5>
+        Switching slides while tasks are running is safe...
+      </h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=3}}
+      <h5>
+        ...because tasks are canceled when their host
+        object is destroyed.
+      </h5>
+    {{/hidden-at-first}}
+  {{/liquid-spacer}}
+</div>
+

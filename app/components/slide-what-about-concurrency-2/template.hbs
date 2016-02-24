@@ -1,0 +1,20 @@
+<div class="flex-center padded" style="width: 100%">
+  {{#liquid-spacer growDuration=250 class="max-width"}}
+    <h3>
+      By default, tasks have <br />unbounded concurrency
+    </h3>
+
+    {{#hidden-at-first index=0}}
+      <h5>You can run multiple instances of the same task at the same time.</h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=1}}
+      <h5>Familiar behavior, but often, you want tasks to run one-at-a-time.</h5>
+    {{/hidden-at-first}}
+
+    {{#hidden-at-first index=2}}
+      <h5>Generally speaking, only <strong>3 ways</strong> to enforce one-at-a-time...</h5>
+    {{/hidden-at-first}}
+  {{/liquid-spacer}}
+</div>
+
