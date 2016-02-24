@@ -5,7 +5,15 @@ function randomTimeout() {
   return timeout(500 + 3000 * Math.random());
 }
 
-const NUM_TOMSTERS = 5;
+const IMAGES = [
+  "assets/images/tomster-0.png",
+  "assets/images/tomster-1.png",
+  "assets/images/tomster-2.png",
+  "assets/images/tomster-3.png",
+  "assets/images/tomster-4.png",
+];
+
+
 export default Ember.Component.extend({
   classNames: 'tomster-head',
 
@@ -15,7 +23,7 @@ export default Ember.Component.extend({
   tomsterHeadStyle: Ember.computed('isShowingTomster', 'tomsterIndex', function() {
     let isShowingTomster = this.get('isShowingTomster');
     let tomsterIndex = this.get('tomsterIndex');
-    let s = `background-image: url(assets/images/tomster-${tomsterIndex}.png); top: ${isShowingTomster ? '-100' : '81'}px;`;
+    let s = `background-image: url(${IMAGES[tomsterIndex]}); top: ${isShowingTomster ? '-100' : '81'}px;`;
     return new Ember.Handlebars.SafeString(s);
   }),
 
@@ -32,7 +40,7 @@ export default Ember.Component.extend({
   // from the tomster-head component
   tomsterLoop: task(function * () {
     while (true) {
-      this.set('tomsterIndex', Math.floor(Math.random() * NUM_TOMSTERS));
+      this.set('tomsterIndex', Math.floor(Math.random() * IMAGES.length));
       yield randomTimeout();
       this.set('isShowingTomster', true);
       yield randomTimeout();
