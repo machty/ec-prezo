@@ -49,6 +49,7 @@ export default Ember.Controller.extend(Ember.Evented, {
     "task-modifiers-5",
     "task-modifiers-6",
     "task-modifiers-7",
+    "things-that-rock-1",
     "go-alone",
   ],
 
