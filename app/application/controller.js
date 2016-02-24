@@ -44,6 +44,11 @@ export default Ember.Controller.extend(Ember.Evented, {
     "what-about-concurrency-6",
     "task-modifiers-1",
     "task-modifiers-2",
+    "task-modifiers-3",
+    "task-modifiers-4",
+    "task-modifiers-5",
+    "task-modifiers-6",
+    "task-modifiers-7",
     "go-alone",
   ],
 
