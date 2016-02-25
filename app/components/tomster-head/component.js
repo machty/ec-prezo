@@ -11,6 +11,7 @@ const IMAGES = [
   "assets/images/tomster-2.png",
   "assets/images/tomster-3.png",
   "assets/images/tomster-4.png",
+  "assets/images/tomster-5.png",
 ];
 
 
