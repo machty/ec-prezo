@@ -8,6 +8,7 @@ start:
   }
   console.log(`processing index ${i}`);
   process(values[i]);
+  i++;
   goto 'start';
 }
 
