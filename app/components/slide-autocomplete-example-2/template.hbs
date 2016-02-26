@@ -1,0 +1,32 @@
+<div class="padded">
+  <h4>Example: <strong>XHR-canceling</strong>, Debounced Auto-Complete</h4>
+
+  <div class="row">
+    <div class="six columns">
+      {{code-snippet name="autocomplete-2.js" class="autocomplete-example"}}
+    </div>
+    <div class="six columns">
+      <ul>
+        <li>
+          Example on the previous slide doesn't cancel old AJAX request
+          when a new one starts.
+        </li>
+        <li>
+          We can "teach" ember-concurrency how to cancel the old request
+          by expressing <strong>getJSON</strong> as a task.
+        </li>
+      </ul>
+
+      <h5>GitHub Repo Search</h5>
+
+      {{! BEGIN-SNIPPET autocomplete-template-2 }}
+      {{#power-select search=(perform searchRepo)
+                selected=selected
+                onchange=(action (mut selected)) as |repo|}}
+        {{repo.full_name}}
+      {{/power-select}}
+      {{! END-SNIPPET }}
+    </div>
+  </div>
+</div>
+

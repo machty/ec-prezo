@@ -21,13 +21,13 @@
       <p>
         {{#press-and-hold-button
           press=(perform incrementBy -1)
-          release=(perform incrementBy 0)}}
+          release=(cancel-all incrementBy)}}
             --Decrease
         {{/press-and-hold-button}}
 
         {{#press-and-hold-button
           press=(perform incrementBy 1)
-          release=(perform incrementBy 0)}}
+          release=(cancel-all incrementBy)}}
             Increase++
         {{/press-and-hold-button}}
       </p>

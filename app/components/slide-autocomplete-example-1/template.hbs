@@ -1,13 +1,12 @@
 <div class="padded">
-  <h4>Example: Auto-canceling, Debounced Auto-Complete</h4>
+  <h4>Example: Debounced Auto-Complete</h4>
 
   <div class="row">
     <div class="six columns">
-      {{code-snippet name="autocomplete.js" class="autocomplete-example"}}
+      {{code-snippet name="autocomplete-1.js" class="autocomplete-example"}}
+      {{code-snippet name="autocomplete-template-1.hbs" class="autocomplete-example"}}
     </div>
     <div class="six columns">
-      {{code-snippet name="autocomplete-template.hbs" class="autocomplete-example"}}
-
       <ul>
         <li>Based off of
           <a href="http://www.ember-power-select.com/cookbook/debounce-searches">
@@ -20,7 +19,7 @@
 
       <h5>GitHub Repo Search</h5>
 
-      {{! BEGIN-SNIPPET autocomplete-template }}
+      {{! BEGIN-SNIPPET autocomplete-template-1 }}
       {{#power-select search=(perform searchRepo)
                 selected=selected
                 onchange=(action (mut selected)) as |repo|}}

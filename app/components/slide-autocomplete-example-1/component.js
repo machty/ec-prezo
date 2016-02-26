@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
 
+const $ = Ember.$;
 const GITHUB_URL = "https://api.github.com/search/repositories";
 
-// BEGIN-SNIPPET autocomplete
+// BEGIN-SNIPPET autocomplete-1
 const DEBOUNCE_MS = 250;
 export default Ember.Component.extend({
   searchRepo: task(function * (term) {
@@ -11,19 +12,9 @@ export default Ember.Component.extend({
 
     yield timeout(DEBOUNCE_MS);
     let url = `${GITHUB_URL}?q=${term}`;
-    let json = yield this.get('getJSON').perform(url);
+    let json = yield $.getJSON(url);
     return json.items;
   }).restartable(),
-
-  getJSON: task(function * (url) {
-    let xhr;
-    try {
-      xhr = Ember.$.getJSON(url);
-      yield xhr.promise();
-    } finally {
-      xhr.abort();
-    }
-  }),
 });
 // END-SNIPPET
 
