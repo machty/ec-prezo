@@ -5,6 +5,7 @@ import { task, subscribe, events } from 'ember-concurrency';
 const { computed } = Ember;
 const LEFT = 37;
 const RIGHT = 39;
+const SPACEBAR = 32;
 
 export default Ember.Controller.extend(Ember.Evented, {
   queryParams: ['slide'],
@@ -113,28 +114,33 @@ export default Ember.Controller.extend(Ember.Evented, {
           this.set('index', 0);
           this.set('slide', destination);
         }
-      } else if (keyCode === RIGHT) {
-        destination = this.get('currentSlide.next');
-        let prevented = false;
-        let proceedEvent = {
-          preventDefault() {
-            let oldPrevented = prevented;
-            prevented = true;
-            return !oldPrevented;
-          },
-          index: this.index,
-        };
-        this.trigger('nextSlide', proceedEvent);
-        Ember.run.next(() => {
-          if (!prevented && destination) {
-            this.set('index', 0);
-            this.set('slide', destination);
-          } else {
-            this.incrementProperty('index');
-          }
-        });
+      } else if (keyCode === RIGHT || keyCode === SPACEBAR) {
+        this.advance();
       }
     });
-  }).on('init')
+  }).on('init'),
+
+  advance() {
+    let destination = this.get('currentSlide.next');
+    document.getSelection().removeAllRanges();
+    let prevented = false;
+    let proceedEvent = {
+      preventDefault() {
+        let oldPrevented = prevented;
+        prevented = true;
+        return !oldPrevented;
+      },
+      index: this.index,
+    };
+    this.trigger('nextSlide', proceedEvent);
+    Ember.run.next(() => {
+      if (!prevented && destination) {
+        this.set('index', 0);
+        this.set('slide', destination);
+      } else {
+        this.incrementProperty('index');
+      }
+    });
+  },
 });
 

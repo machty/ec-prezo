@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { task, timeout, subscribe, events } from 'ember-concurrency';
+import { task, timeout, subscribe, events, race } from 'ember-concurrency';
 
 const BASE_WIDTH  = 900;
 const BASE_HEIGHT = 500;
@@ -37,5 +37,11 @@ export default Ember.Component.extend({
       transform: ` translateX(-50%) translateY(-50%) scale(${trans})`,
     });
   }),
+
+  click: function(ev) {
+    if (Ember.$(ev.target).closest('a,button').length === 0) {
+      this.sendAction('advance');
+    }
+  },
 });
 
