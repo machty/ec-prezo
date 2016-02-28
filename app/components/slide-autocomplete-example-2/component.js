@@ -20,7 +20,8 @@ export default Ember.Component.extend({
     let xhr;
     try {
       xhr = $.getJSON(url);
-      yield xhr.promise();
+      let value = yield xhr.promise();
+      return value;
     } finally {
       xhr.abort();
     }
